@@ -22,7 +22,6 @@ jobs:
       working-directory: ./test-playwright
       run: ./test-playwright || npx playwright test
     - uses: actions/upload-artifact@v3
-      run: ./test-playwright
       if: always()
       with:
         name: playwright-report
