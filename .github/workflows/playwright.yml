@@ -8,19 +8,20 @@ jobs:
   e2e-test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: test-playwright
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 16
     - name: Install dependencies
-      run: ./test-playwright || npm ci
+      run: npm ci
     - name: Install Playwright Browsers
-      working-directory: ./test-playwright
-      run: ./test-playwright || npx playwright install --with-deps
+      run: npx playwright install --with-deps
     - name: Run Playwright tests
-      working-directory: ./test-playwright
-      run: ./test-playwright || npx playwright test
+      run: npx playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
