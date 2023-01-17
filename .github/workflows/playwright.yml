@@ -14,16 +14,16 @@ jobs:
       with:
         node-version: 16
     - name: Install dependencies
-      working-directory : ./test-playwright
+      working-directory: ./test-playwright
       run: npm ci
     - name: Install Playwright Browsers
-      working-directory : ./test-playwright
+      working-directory: ./test-playwright
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      working-directory : ./test-playwright
+      working-directory: ./test-playwright
       run: npx playwright test
     - uses: actions/upload-artifact@v3
-      working-directory : ./test-playwright
+      working-directory: ./test-playwright
       if: always()
       with:
         name: playwright-report
