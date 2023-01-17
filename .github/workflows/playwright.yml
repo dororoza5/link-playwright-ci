@@ -13,6 +13,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: redirect
+      run : cd test-playwright
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
