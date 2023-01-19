@@ -17,15 +17,15 @@ jobs:
       with:
         node-version: 16
     - name: npm install
-      run: yarn install
+      run: npm install
     # - name: install pm2
     #   run: npm install pm2 -g
-    - name: run local
-      run: (yarn dev&)
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: run local
+      run: (npm run dev&)
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v3
