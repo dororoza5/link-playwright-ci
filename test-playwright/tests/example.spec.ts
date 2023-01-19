@@ -16,3 +16,10 @@ test('get started link', async ({ page }) => {
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/);
 });
+
+test("local", async ({page}) => {
+  await page.goto("http://localhost:5173/")
+
+  await page.waitForSelector("//h1[normalize-space()='Vite + React']");
+  await expect(page).toHaveTitle("Vite + React")
+})

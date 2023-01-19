@@ -16,6 +16,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: run local
+      run: yarn dev
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
