@@ -17,11 +17,11 @@ jobs:
       with:
         node-version: 16
     - name: npm install
-      run: npm install
-    - name: install pm2
-      run: npm install pm2 -g
+      run: yarn install
+    # - name: install pm2
+    #   run: npm install pm2 -g
     - name: run local
-      run: pm2 start npm -- dev
+      run: yarn build
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
