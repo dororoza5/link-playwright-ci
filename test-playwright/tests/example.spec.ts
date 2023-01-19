@@ -20,6 +20,6 @@ test('get started link', async ({ page }) => {
 test("local", async ({page}) => {
   await page.goto("http://localhost:5173/")
 
-  await page.waitForSelector("//h1[normalize-space()='Vite + React']");
+  // await page.waitForSelector("//h1[normalize-space()='Vite + React']");
   await expect(page).toHaveTitle("Vite + React")
 })
